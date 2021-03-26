@@ -1,5 +1,14 @@
 from django.db import models
 
+OPCOES_CATEGORIA = (
+        ('Categoria A', 'Categoria A'),
+        ('Categoria B', 'Categoria B'),
+        ('Categoria C', 'Categoria C'),
+        ('Categoria D', 'Categoria D'),
+        ('Categoria E', 'Categoria E'),
+        ('ACC', 'ACC'),
+    )
+
 
 class Pessoa(models.Model):
     OPCOES_CNH = (
@@ -31,15 +40,7 @@ class Aluno(Pessoa):
         ('Renovação', 'Renovação'),
         ('CRCI', 'CRCI'),
     )
-    OPCOES_CATEGORIA = (
-        ('Categoria A', 'Categoria A'),
-        ('Categoria B', 'Categoria B'),
-        ('Categoria C', 'Categoria C'),
-        ('Categoria D', 'Categoria D'),
-        ('Categoria E', 'Categoria E'),
-        ('ACC', 'ACC'),
-    )
-
+    esta_ativo = models.BooleanField('Aluno em Atividade', default=True)
     situacao = models.CharField('Situação da Carteira',
                                 max_length=20,
                                 choices=OPCOES_SITUACAO)
@@ -58,6 +59,7 @@ class Professor(Pessoa):
         ('Instrutor Prático', 'Instrutor Prático'),
         ('Instrutor Teórico', 'Instrutor Teórico'),
     )
+    esta_ativo = models.BooleanField('Professor em Atividade', default=True)
     especializacao = models.CharField('Especialização',
                                       max_length=20,
                                       choices=OPCOES_ESPECIALIZACAO)
@@ -83,7 +85,9 @@ class Conteudo(models.Model):
 class Turma(models.Model):
     codigo = models.CharField('Código', max_length=10)
     max_aluno = models.IntegerField('Quantidade de alunos por turma')
-    professor = models.ForeignKey(Professor, null=True, on_delete=models.SET_NULL)
+    professor = models.ForeignKey(Professor,
+                                  null=True,
+                                  on_delete=models.SET_NULL)
     conteudo = models.ForeignKey(Conteudo, on_delete=models.CASCADE)
     alunos = models.ManyToManyField(Aluno)
 
@@ -93,3 +97,52 @@ class Turma(models.Model):
 
     def __str__(self):
         return f"{self.codigo} - {self.conteudo} - {self.max_aluno}"
+
+
+class Veiculo(models.Model):
+    placa = models.CharField('Placa', max_length=7)
+    modelo = models.CharField('Modelo', max_length=100)
+    esta_apto = models.BooleanField('Apto para Uso', default=True)
+    categoria = models.CharField('Categoria',
+                                 max_length=20,
+                                 choices=OPCOES_CATEGORIA)
+
+    class Meta:
+        verbose_name = 'Veículo'
+        verbose_name_plural = 'Veículos'
+
+    def __str__(self):
+        return f"{self.placa} - {self.modelo} - {self.categoria}"
+
+
+class Aula(models.Model):
+    data = models.DateField('Data', help_text='Formato DD/MM/AAAA')
+    duracao = models.IntegerField('Duração', help_text='Quantidade de Horas')
+
+    class Meta:
+        abstract = True
+
+
+class AulaPratica(Aula):
+    aluno = models.ForeignKey(Aluno, on_delete=models.CASCADE)
+    veiculo = models.ForeignKey(Veiculo, on_delete=models.CASCADE)
+    professor = models.ForeignKey(Professor, on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name = 'Aula Prática'
+        verbose_name_plural = 'Aulas Práticas'
+
+    def __str__(self):
+        return f"{self.data} - {self.aluno} - {self.professor} - {self.veiculo}"
+
+
+class AulaTeorica(Aula):
+    turma = models.ForeignKey(Turma, on_delete=models.CASCADE)
+    professor = models.ForeignKey(Professor, on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name = 'Aula Teórica'
+        verbose_name_plural = 'Aulas Teóricas'
+
+    def __str__(self):
+        return f"{self.data} - {self.turma} - {self.professor}"
