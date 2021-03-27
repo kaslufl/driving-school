@@ -1,1 +1,1 @@
-web: gunicorn drivingschol.wsgi --log-file -
+web: gunicorn drivingschool.wsgi --log-file -
