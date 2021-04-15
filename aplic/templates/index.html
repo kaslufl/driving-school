@@ -1,0 +1,436 @@
+{%extends 'base.html' %}
+{%load static%}
+{%block content%}
+    <body data-spy="scroll" data-target=".navbar" data-offset="200">
+        <div class='preloader'>
+            <div class='loaded'>&nbsp;</div>
+        </div>
+
+        <div class="culmn">
+
+        {% include 'header.html' %}
+
+            <section id="home" class="home">
+                <div class="overlay">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 ">
+                                <div class="main_home_slider text-center">
+                                    <div class="single_home_slider">
+                                        <div class="main_home wow fadeInUp" data-wow-duration="700ms">
+                                            <h1>Bem-Vindo a Auto Escola PTS</h1>
+                                            <p>Nos te ajudamos a realizar seu sonho de dirigir</p>
+                                            <div class="home_btn">
+                                                <a href="" class="btn btn-primary">Leia mais</a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="single_home_slider">
+                                        <div class="main_home wow fadeInUp" data-wow-duration="700ms">
+                                            <h1>Faça sua carteira de habilitação aqui</h1>
+                                            <p>Temos diversas opções de tipo de carteira</p>
+                                            <div class="home_btn">
+                                                <a href="" class="btn btn-primary">Leia mais</a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <section id="service" class="service">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="main_service_area">
+                                <div class="main_service_content">
+                                    <div class="service_tabe">
+                                        <!-- Nav tabs -->
+                                        <ul class="service_tabe_menu nav nav-tabs" role="tablist">
+                                            <li role="presentation" class="active"><a href="#webdesign" aria-controls="webdesign" role="tab" data-toggle="tab"><i class="fa fa-map-marker"></i> <br />Tipo A</a></li>
+                                            <li role="presentation"><a href="#appdesign" aria-controls="appdesign" role="tab" data-toggle="tab"><i class="fa fa-map-marker"></i> <br />Tipo B</a></li>
+                                            <li role="presentation"><a href="#graphicdesign" aria-controls="graphicdesign" role="tab" data-toggle="tab"><i class="fa fa-map-marker"></i> <br />Tipo C</a></li>
+                                            <li role="presentation"><a href="#gamedesign" aria-controls="gamedesign" role="tab" data-toggle="tab"><i class="fa fa-map-marker"></i> <br />Entre Outros</a></li>
+                                        </ul>
+
+                                        <!-- Tab panes -->
+                                        <div class="tab-content">
+                                            <div role="tabpanel" class="tab-pane active" id="webdesign">
+                                                <div class="single_service_tab">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <div class="single_tab_content">
+                                                                <div class="head_title">
+                                                                    <h3>Tipo A</h3>
+                                                                    <div class="separator"></div>
+                                                                </div>
+                                                                <p>Pellentesque velit quam, hendrerit vel posuere nec, maximus sit amet urna. Nunc eget magna mauris. Ut rutrum ligula ac imperdiet egestas. Nulla vel condimentum quam. Quisque vitae tempor nisl. Sed molestie volutpat vehicula. Vivamus vel venenatis lacus, vitae tincidunt sapien. Donec at iaculis risus, sit amet molestie augue. Vivamus dolor lacus, placerat a odio nec, rutrum tempor odio. Curabitur felis lacus, porttitor eget mollis id, sodales a enim. Aenean nisl dolor, luctus ut suscipit suscipit, mollis sed elit. Curabitur vestibulum quis tellus eget placerat. Etiam lobortis rhoncus urna et venenatis.</p>
+
+                                                                <a href="" class="btn btn-primary">Leia mais</a>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-sm-6">
+                                                            <div class="single_tab_img">
+                                                                <img src="{% static 'images/stab1.png' %}" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div role="tabpanel" class="tab-pane" id="appdesign">
+                                                <div class="single_service_tab">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <div class="single_tab_content">
+                                                                <div class="head_title">
+                                                                    <h3>Tipo B</h3>
+                                                                    <div class="separator"></div>
+                                                                </div>
+                                                                <p>Pellentesque velit quam, hendrerit vel posuere nec, maximus sit amet urna. Nunc eget magna mauris. Ut rutrum ligula ac imperdiet egestas. Nulla vel condimentum quam. Quisque vitae tempor nisl. Sed molestie volutpat vehicula. Vivamus vel venenatis lacus, vitae tincidunt sapien. Donec at iaculis risus, sit amet molestie augue. Vivamus dolor lacus, placerat a odio nec, rutrum tempor odio. Curabitur felis lacus, porttitor eget mollis id, sodales a enim. Aenean nisl dolor, luctus ut suscipit suscipit, mollis sed elit. Curabitur vestibulum quis tellus eget placerat. Etiam lobortis rhoncus urna et venenatis. Vestibulum ac lorem faucibus, commodo lectus quis, condimentum justo. Etiam molestie mattis rutrum </p>
+
+                                                                <a href="" class="btn btn-primary">Leia mais</a>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-sm-6">
+                                                            <div class="single_tab_img">
+                                                                <img src="{% static 'images/featureslid1.jpg' %}" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div role="tabpanel" class="tab-pane" id="graphicdesign">
+                                                <div class="single_service_tab">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <div class="single_tab_content">
+                                                                <div class="head_title">
+                                                                    <h3>Tipo C</h3>
+                                                                    <div class="separator"></div>
+                                                                </div>
+                                                                <p>Pellentesque velit quam, hendrerit vel posuere nec, maximus sit amet urna. Nunc eget magna mauris. Ut rutrum ligula ac imperdiet egestas. Nulla vel condimentum quam. Quisque vitae tempor nisl. Sed molestie volutpat vehicula. Vivamus vel venenatis lacus, vitae tincidunt sapien. Donec at iaculis risus, sit amet molestie augue. Vivamus dolor lacus, placerat a odio nec, rutrum tempor odio. Curabitur felis lacus, porttitor eget mollis id, sodales a enim. Aenean nisl dolor, luctus ut suscipit suscipit, mollis sed elit. Curabitur vestibulum quis tellus eget placerat. Etiam lobortis rhoncus urna et venenatis. Vestibulum ac lorem faucibus, commodo lectus quis, condimentum justo. Etiam molestie mattis rutrum</p>
+
+                                                                <a href="" class="btn btn-primary">Leia mais</a>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-sm-6">
+                                                            <div class="single_tab_img">
+                                                                <img src="{% static 'images/stab1.png' %}" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div role="tabpanel" class="tab-pane" id="gamedesign">
+                                                <div class="single_service_tab">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <div class="single_tab_content">
+                                                                <div class="head_title">
+                                                                    <h3>Entre outros</h3>
+                                                                    <div class="separator"></div>
+                                                                </div>
+                                                                <p>Pellentesque velit quam, hendrerit vel posuere nec, maximus sit amet urna. Nunc eget magna mauris. Ut rutrum ligula ac imperdiet egestas. Nulla vel condimentum quam. Quisque vitae tempor nisl. Sed molestie volutpat vehicula. Vivamus vel venenatis lacus, vitae tincidunt sapien. Donec at iaculis risus, sit amet molestie augue. Vivamus dolor lacus, placerat a odio nec, rutrum tempor odio. Curabitur felis lacus, porttitor eget mollis id, sodales a enim. Aenean nisl dolor, luctus ut suscipit suscipit, mollis sed elit. Curabitur vestibulum quis tellus eget placerat. Etiam lobortis rhoncus urna et venenatis. Vestibulum ac lorem faucibus, commodo lectus quis, condimentum justo. Etiam molestie mattis rutrum </p>
+
+                                                                <a href="" class="btn btn-primary">Leia mais</a>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-sm-6">
+                                                            <div class="single_tab_img">
+                                                                <img src="{% static 'images/featureslid1.jpg' %}" alt="" />
+                                                            </div>
+                                                        </div>
+                                                        <!--                                                        <div id="pentagon"></div>-->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+            <section id="counter" class="counter">
+                <div class="video_overlay">
+                    <div class="container">
+                        <div class="row">  
+                            <div class="col-sm-12">               
+                                <div class="main_counter_area text-center">
+
+                                    <div class="row">
+                                        <div class="single_counter border_right">
+                                            <div class="col-sm-3 col-xs-12">
+                                                <div class="single_counter_item">
+                                                    <h2 class="statistic-counter">961</h2>
+                                                    <i class="icon icon-thumbs-up"></i>
+                                                    <p class="margin-top-20">Alunos</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="single_counter">
+                                            <div class="col-sm-3 col-xs-12">
+                                                <div class="single_counter_item">
+                                                    <h2 class="statistic-counter">25</h2>
+                                                    <i class="icon icon-business-3"></i>
+                                                    <p class="margin-top-20">Professores</p>
+                                                </div>
+
+                                            </div>
+                                        </div> 
+
+                                        <div class="single_counter">
+                                            <div class="col-sm-3 col-xs-12">
+                                                <div class="single_counter_item">
+                                                    <h2 class="statistic-counter">870</h2>
+                                                    <i class="icon icon-people-32"></i>
+                                                    <p class="margin-top-20">Habilitados</p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>  <!-- End of counter section -->
+
+            <section id="team" class="team">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="main_team sections">
+                                <div class="row">
+                                    <div class="head_title">
+                                        <h3>OTHER SERVICES</h3>
+                                        <div class="separator"></div>
+                                    </div>
+                                    {%for professor in professores%}
+                                    <div class="col-sm-3 col-xs-12">
+                                        <div class="single_team_content">
+                                            <div class="single_team_img">
+                                                <img src="{{professor.foto.thumb.url}}" alt="{{professor.nome}}" />
+                                            </div>
+                                            <div class="single_team_text_overlay">
+                                                <h4>SEMF UCUK</h4>
+                                                <p>FOUNDER</p>
+                                                <div class="team_overlay_socail">
+                                                    <a href="{{professor.facebook}}"><i class="fa fa-facebook"></i></a>
+                                                    <a href="{{professor.twitter}}"><i class="fa fa-twitter"></i></a>
+                                                    <a href="{{professor.instagram}}"><i class="fa fa-instagram"></i></a>
+                                                    <a href="{{professor.linkedin}}"><i class="fa fa-linkedin"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                   {%endfor%}
+                                </div>
+
+                            </div><!-- End of main team contant -->
+                        </div>
+                    </div><!-- End of row -->
+                </div>
+            </section>
+
+            {%include 'testimonial.html'%}
+
+
+            <section id="clogo" class="clogo">
+                <div class="container">
+                    <div class="row">
+                        <div class="main_clogo sections text-center">
+                            <div class="col-sm-2 col-xs-6"> 
+                                <a href=""><img src="{% static 'images/clogo1.png' %}" alt="" /></a>
+                            </div>
+                            <div class="col-sm-2 col-xs-6"> 
+                                <a href=""><img src="{% static 'images/clogo2.png' %}" alt="" /></a>
+                            </div>
+                            <div class="col-sm-2 col-xs-6"> 
+                                <a href=""><img src="{% static 'images/clogo3.png' %}" alt="" /></a>
+                            </div>
+                            <div class="col-sm-2 col-xs-6">
+                                <a href=""><img src="{% static 'images/clogo4.png' %}" alt="" /></a>
+                            </div>
+                            <div class="col-sm-2 col-xs-6"> 
+                                <a href=""><img src="{% static 'images/clogo5.png' %}" alt="" /></a>
+                            </div>
+                            <div class="col-sm-2 col-xs-6">
+                                <a href=""><img src="{% static 'images/clogo9.png' %}" alt="" /></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+            <section id="contact" class="contact">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <div class="contact_contant sections">
+                                    <div class="col-sm-6">
+
+                                        <div class="main_contact_info">
+                                            <div class="head_title">
+                                                <h3>Informação de contato</h3>
+                                                <div class="separator"></div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="contact_info_content">
+                                                    <div class="col-sm-12">
+                                                        <div class="single_contact_info">
+                                                            <div class="single_info_icon">
+                                                                <i class="fa fa-home"></i>
+                                                            </div>
+                                                            <div class="single_info_text">
+                                                                <h3>Endereço</h3>
+                                                                <p>Pellentesque velit quam, hendrerit vel posuere nec, maximus sit amet urna</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <div class="single_contact_info">
+                                                            <div class="single_info_icon">
+                                                                <i class="fa fa-envelope-o"></i>
+                                                            </div>
+                                                            <div class="single_info_text">
+                                                                <h3>Email</h3>
+                                                                <p>Pellentesque velit quam, hendrerit vel posuere nec, maximus sit amet urna</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <div class="single_contact_info">
+                                                            <div class="single_info_icon">
+                                                                <i class="fa fa-mobile"></i>
+                                                            </div>
+                                                            <div class="single_info_text">
+                                                                <h3>Telefone</h3>
+                                                                <p>+(00) 123 4567 890</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <div class="single_contact_info">
+                                                            <div class="single_info_icon">
+                                                                <i class="fa fa-clock-o"></i>
+                                                            </div>
+                                                            <div class="single_info_text">
+                                                                <h3>Horaio de trabalho</h3>
+                                                                <p>Segunda - Sexta: 08h -15h</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+
+                                    <div class="col-sm-6">
+                                        <div class="head_title">
+                                            <h3>Deixe uma mensagem</h3>
+                                            <div class="separator"></div>
+                                        </div>
+                                        <div class="single_contant_left">
+                                            <form action="#" id="formid">
+                                                <!--<div class="col-lg-8 col-md-8 col-sm-10 col-lg-offset-2 col-md-offset-2 col-sm-offset-1">-->
+
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" name="name" placeholder="First Name" required="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" name="name" placeholder="Last Name" required="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <input type="email" class="form-control" name="email" placeholder="Email" required="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="form-group">
+                                                    <textarea class="form-control" name="message" rows="8" placeholder="Message"></textarea>
+                                                </div>
+
+                                                <div class="">
+                                                    <input type="submit" value="Submit" class="btn btn-primary">
+                                                </div>
+                                                <!--</div>--> 
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </section>  <!-- End of contact section -->
+
+
+
+            <section id="maps" class="maps">
+                <div class="map-overlay">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="main_maps text-center">
+                                <div class="col-sm-12 no-padding">
+                                    <div class="map_canvas_icon">
+                                        <i class="fa fa-map-marker" onClick="showmap()"></i>
+                                        <h2 onClick="showmap()">Nos ache no google maps</h2>
+                                    </div>
+                                    <div id="map_canvas"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {% include 'footer.html' %}
+{%endblock%}
+
+
+
+
+
+
+
+
+
+
