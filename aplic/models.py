@@ -1,4 +1,13 @@
 from django.db import models
+from stdimage.models import StdImageField
+import uuid
+
+
+def get_file_path(_instance, filename):
+    ext = filename.split('.')[-1]
+    filename = f'{uuid.uuid4()}.{ext}'
+    return filename
+
 
 OPCOES_CATEGORIA = (
         ('Categoria A', 'Categoria A'),
@@ -63,6 +72,11 @@ class Professor(Pessoa):
     especializacao = models.CharField('Especialização',
                                       max_length=20,
                                       choices=OPCOES_ESPECIALIZACAO)
+    facebook = models.CharField('Facebook', blank=True, max_length=200)
+    linkedin = models.CharField('Linkedin', blank=True, max_length=200)
+    twitter = models.CharField('Twitter', blank=True, max_length=200)
+    instagram = models.CharField('Instagram', blank=True, max_length=200)
+    foto = StdImageField('Foto', null=True, blank=True, upload_to=get_file_path, variations={'thumb': {'width': 480, 'height': 480, 'crop': True}})
 
     class Meta:
         verbose_name = 'Professor'
