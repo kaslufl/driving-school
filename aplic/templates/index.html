@@ -221,7 +221,7 @@
                             <div class="main_team sections">
                                 <div class="row">
                                     <div class="head_title">
-                                        <h3>OTHER SERVICES</h3>
+                                        <h3>..NOSSO TIME</h3>
                                         <div class="separator"></div>
                                     </div>
                                     {%for professor in professores%}
@@ -231,8 +231,8 @@
                                                 <img src="{{professor.foto.thumb.url}}" alt="{{professor.nome}}" />
                                             </div>
                                             <div class="single_team_text_overlay">
-                                                <h4>SEMF UCUK</h4>
-                                                <p>FOUNDER</p>
+                                                <h4>{{professor.nome}}</h4>
+                                                <p>{{professor.especializacao}}</p>
                                                 <div class="team_overlay_socail">
                                                     <a href="{{professor.facebook}}"><i class="fa fa-facebook"></i></a>
                                                     <a href="{{professor.twitter}}"><i class="fa fa-twitter"></i></a>
