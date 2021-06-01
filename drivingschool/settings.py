@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 import dj_database_url
 
+from dotenv import load_dotenv
+load_dotenv()
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -22,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '=toibi-#e9g=sx_(h2txpyda(ozp0yi5q_d76k574d@p!m%tmz'
+SECRET_KEY = os.getenv("KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -34,6 +37,8 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'aplic',
+    'bootstrap4',
+    'chartjs',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,6 +48,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -132,3 +138,21 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 LOGOUT_REDIRECT_URL = 'index'
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+)
+
+# Email teste console
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+"""
+# Email produção
+
+EMAIL_HOST = 'localhost'
+EMAIL_HOST_USER = 'no-reply@dominio.com.br'
+EMAIL_PORT = 587
+EMAIL_USE_TSL = True
+EMAIL_HOST_PASSWORD = 'dominio'
+DEFAULT_FROM_EMAIL = 'contato@dominio.com.br'
+"""

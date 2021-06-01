@@ -1,0 +1,131 @@
+{% load static %}
+<section id="contact" class="contact">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <div class="contact_contant sections">
+                                    <div class="col-sm-6">
+
+                                        <div class="main_contact_info">
+                                            <div class="head_title">
+                                                <h3>{% trans 'Informação de contato' %}</h3>
+                                                <div class="separator"></div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="contact_info_content">
+                                                    <div class="col-sm-12">
+                                                        <div class="single_contact_info">
+                                                            <div class="single_info_icon">
+                                                                <i class="fa fa-home"></i>
+                                                            </div>
+                                                            <div class="single_info_text">
+                                                                <h3>{% trans 'Endereço' %}</h3>
+                                                                <p>Pellentesque velit quam, hendrerit vel posuere nec, maximus sit amet urna</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <div class="single_contact_info">
+                                                            <div class="single_info_icon">
+                                                                <i class="fa fa-envelope-o"></i>
+                                                            </div>
+                                                            <div class="single_info_text">
+                                                                <h3>{% trans 'Email' %}</h3>
+                                                                <p>Pellentesque velit quam, hendrerit vel posuere nec, maximus sit amet urna</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <div class="single_contact_info">
+                                                            <div class="single_info_icon">
+                                                                <i class="fa fa-mobile"></i>
+                                                            </div>
+                                                            <div class="single_info_text">
+                                                                <h3>{% trans 'Telefone' %}</h3>
+                                                                <p>+(00) 123 4567 890</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <div class="single_contact_info">
+                                                            <div class="single_info_icon">
+                                                                <i class="fa fa-clock-o"></i>
+                                                            </div>
+                                                            <div class="single_info_text">
+                                                                <h3>{% trans 'Horaio de trabalho' %}</h3>
+                                                                <p>{% trans 'Segunda - Sexta' %}: 08h-15h</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+
+                                    <div class="col-sm-6">
+                                        <div class="head_title">
+                                            <h3>{% trans 'Deixe uma mensagem' %}</h3>
+                                            <div class="separator"></div>
+                                        </div>
+                                         <div class="container">
+                                            {% if messages %}
+                                                {% for m in messages %}
+                                                    <div class="alert alert-{{ m.extra_tags }}">
+                                                        <button type="button" class="close" data-dismiss="alert"></button>
+                                                        <strong>{{ m }}</strong>
+                                                    </div>
+                                                {% endfor %}
+                                            {% endif %}
+                                        </div>
+                                        <div class="single_contant_left">
+                                            <form id="contato" method="post" action="{% url 'contato' %}">
+                                                {% csrf_token %}
+                                                <!--<div class="col-lg-8 col-md-8 col-sm-10 col-lg-offset-2 col-md-offset-2 col-sm-offset-1">-->
+
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" id="nome" name="nome" required data-error="Please enter your name" placeholder="First Name">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" id="sobrenome" class="form-control" name="sobrenome" required data-error="Please enter your Last Name" placeholder="Last Name">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <input type="email" id="email" class="form-control" name="email" required data-error="Please enter your email" placeholder="Email" >
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <input type="text" id="assunto" name="assunto" class="form-control" required data-error="Please enter your subject" placeholder="Subject" required="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="form-group">
+                                                    <textarea class="form-control" id="mensagem" placeholder="Mensagem" name="mensagem" rows="8" data-error="Write your message"></textarea>
+                                                </div>
+
+                                                <div class="">
+                                                    <input type="submit" value="Submit"   id="form-submit" class="btn btn-primary">
+                                                </div>
+                                                <!--</div>--> 
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </section>  <!-- End of contact section -->
