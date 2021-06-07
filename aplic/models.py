@@ -18,6 +18,56 @@ OPCOES_CATEGORIA = (
         ('ACC', 'ACC'),
     )
 
+class Estado(models.Model):
+    uf = models.CharField('UF', max_length=2, unique=True)
+    nome = models.CharField('Estado', max_length=55)
+
+    class Meta:
+        verbose_name = 'Estado'
+        verbose_name_plural = 'Estados'
+        ordering = ['id']
+
+    def __str__(self):
+        return f'{self.uf} - {self.estado}'
+
+class Cidade(models.Model):
+    nome = models.CharField('Cidade', max_length=255)
+    estado = models.ForeignKey(Estado, on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name = 'Cidade'
+        verbose_name_plural = 'Cidades'
+        ordering = ['id']
+
+    def __str__(self):
+        return f'{self.nome}'
+
+class Logradouro(models.Model):
+    nome = models.CharField('Cidade', max_length=255)
+    cidade = models.ForeignKey(Cidade, on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name = 'Logradouro'
+        verbose_name_plural = 'Logradouros'
+        ordering = ['id']
+
+    def __str__(self):
+        return f'{self.nome}'
+
+
+class Endereco(models.Model):
+    logradouro = models.ForeignKey(Cidade, on_delete=models.DO_NOTHING)
+    complemento = models.CharField('Complemento', max_length=255)
+    numero = models.CharField('Número', max_length=9)
+
+    class Meta:
+        verbose_name = 'Endereço'
+        verbose_name_plural = 'Endereços'
+        ordering = ['id']
+
+    def __str__(self):
+        return f'{self.nome}'
+
 
 class Pessoa(models.Model):
     OPCOES_CNH = (
@@ -32,7 +82,7 @@ class Pessoa(models.Model):
     nome = models.CharField('Nome', max_length=100)
     data_nascimento = models.DateField('Data de Nascimento', help_text='Formato DD/MM/AAAA')
     cpf = models.CharField('CPF', max_length=15)
-    endereco = models.CharField('Endereço', max_length=100)
+    endereco = models.ForeignKey(Cidade, on_delete=models.CASCADE)
     matricula = models.IntegerField('Matrícula', unique=True)
     cnh = models.CharField('CNH', max_length=20, choices=OPCOES_CNH)
 
@@ -132,6 +182,7 @@ class Veiculo(models.Model):
 class Aula(models.Model):
     data = models.DateField('Data', help_text='Formato DD/MM/AAAA')
     duracao = models.IntegerField('Duração', help_text='Quantidade de Horas')
+    professor = models.ForeignKey(Professor, on_delete=models.CASCADE)
 
     class Meta:
         abstract = True
@@ -140,7 +191,6 @@ class Aula(models.Model):
 class AulaPratica(Aula):
     aluno = models.ForeignKey(Aluno, on_delete=models.CASCADE)
     veiculo = models.ForeignKey(Veiculo, on_delete=models.CASCADE)
-    professor = models.ForeignKey(Professor, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = 'Aula Prática'
@@ -152,7 +202,6 @@ class AulaPratica(Aula):
 
 class AulaTeorica(Aula):
     turma = models.ForeignKey(Turma, on_delete=models.CASCADE)
-    professor = models.ForeignKey(Professor, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = 'Aula Teórica'

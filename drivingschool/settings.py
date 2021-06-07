@@ -13,9 +13,6 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 import dj_database_url
 
-from dotenv import load_dotenv
-load_dotenv()
-
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv("KEY")
+SECRET_KEY = 'toibi-#e9g=sx_(h2txpyda(ozp0yi5q_d76k574d@p!m%tmz'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -45,6 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_filters',
+    'rest_framework',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -156,3 +156,22 @@ EMAIL_USE_TSL = True
 EMAIL_HOST_PASSWORD = 'dominio'
 DEFAULT_FROM_EMAIL = 'contato@dominio.com.br'
 """
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+    ),
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 2,
+    'DEFAULT_THROTTLE_CLASSES': (
+        'rest_framework.throttling.AnonRateThrottle',
+        'rest_framework.throttling.UserRateThrottle',
+    ),
+    'DEFAULT_THROTTLE_RATES': {
+        'anon': '5/minute',  # second, day, month, year
+        'user': '10/minute'
+    }
+}
