@@ -1,5 +1,10 @@
-{% load static %}
+{%extends 'base.html' %}
 {% load i18n %}
+{%load static%}
+{%block content%}
+
+ {% include 'header.html' %}
+
 <section id="contact" class="contact">
 
                 <div class="container">
@@ -81,10 +86,8 @@
                                             {% endif %}
                                         </div>
                                         <div class="single_contant_left">
-                                            <form id="contato" method="post" action="{% url 'index' %}">
+                                            <form id="contato" method="post" action="{% url 'contato' %}">
                                                 {% csrf_token %}
-                                                <!--<div class="col-lg-8 col-md-8 col-sm-10 col-lg-offset-2 col-md-offset-2 col-sm-offset-1">-->
-
                                                 <div class="row">
                                                     <div class="col-sm-6">
                                                         <div class="form-group">
@@ -130,3 +133,4 @@
                         </div>
                     </div>
             </section>  <!-- End of contact section -->
+  {% endblock %}
