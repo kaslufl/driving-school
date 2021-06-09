@@ -1,10 +1,12 @@
+from chartjs.views.lines import BaseLineChartView
 from django.contrib import messages
+from django.db.models import Count
 from django.urls import reverse_lazy
-from django.views.generic import TemplateView, FormView
 from django.utils.translation import gettext as _
+from django.views.generic import FormView, TemplateView
 
 from aplic.forms import ContatoForm
-from aplic.models import Professor
+from aplic.models import Professor, Turma
 
 
 class IndexView(TemplateView):
@@ -35,3 +37,22 @@ class ContatoView(FormView):
     def form_invalid(self, form, *args, **kwargs):
         messages.error(self.request, _('Falha ao enviar e-mail'), extra_tags='danger')
         return super(ContatoView, self).form_invalid(form, *args, **kwargs)
+
+
+class DadosGraficoTurmaView(BaseLineChartView):
+
+    def get_labels(self):
+        labels = []
+        queryset = Turma.objects.order_by('id').aggregate()
+        for turma in queryset:
+            labels.append(turma.codigo)
+        return labels
+
+    def get_data(self):
+        resultado = []
+        dados = []
+        queryset = Turma.objects.order_by('id').annotate(total=Count('alunos'))
+        for linha in queryset:
+            dados.append(int(linha.total))
+        resultado.append(dados)
+        return resultado

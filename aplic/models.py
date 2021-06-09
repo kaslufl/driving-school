@@ -28,7 +28,8 @@ class Estado(models.Model):
         ordering = ['id']
 
     def __str__(self):
-        return f'{self.uf} - {self.estado}'
+        return f'{self.uf} - {self.nome}'
+
 
 class Cidade(models.Model):
     nome = models.CharField('Cidade', max_length=255)
@@ -42,8 +43,10 @@ class Cidade(models.Model):
     def __str__(self):
         return f'{self.nome}'
 
+
 class Logradouro(models.Model):
-    nome = models.CharField('Cidade', max_length=255)
+    nome = models.CharField('Rua', max_length=255)
+    cep = models.CharField('CEP', max_length=8)
     cidade = models.ForeignKey(Cidade, on_delete=models.CASCADE)
 
     class Meta:
@@ -56,8 +59,8 @@ class Logradouro(models.Model):
 
 
 class Endereco(models.Model):
-    logradouro = models.ForeignKey(Cidade, on_delete=models.DO_NOTHING)
-    complemento = models.CharField('Complemento', max_length=255)
+    logradouro = models.ForeignKey(Logradouro, on_delete=models.DO_NOTHING)
+    complemento = models.CharField('Complemento', blank=True, max_length=255)
     numero = models.CharField('Número', max_length=9)
 
     class Meta:
@@ -66,7 +69,7 @@ class Endereco(models.Model):
         ordering = ['id']
 
     def __str__(self):
-        return f'{self.nome}'
+        return f'{self.logradouro}'
 
 
 class Pessoa(models.Model):
@@ -82,7 +85,7 @@ class Pessoa(models.Model):
     nome = models.CharField('Nome', max_length=100)
     data_nascimento = models.DateField('Data de Nascimento', help_text='Formato DD/MM/AAAA')
     cpf = models.CharField('CPF', max_length=15)
-    endereco = models.ForeignKey(Cidade, on_delete=models.CASCADE)
+    endereco = models.ForeignKey(Endereco, on_delete=models.CASCADE)
     matricula = models.IntegerField('Matrícula', unique=True)
     cnh = models.CharField('CNH', max_length=20, choices=OPCOES_CNH)
 
@@ -148,7 +151,7 @@ class Conteudo(models.Model):
 
 class Turma(models.Model):
     codigo = models.CharField('Código', max_length=10)
-    max_aluno = models.IntegerField('Quantidade de alunos por turma')
+    max_aluno = models.IntegerField('Quantidade de alunos max de alunos')
     professor = models.ForeignKey(Professor,
                                   null=True,
                                   on_delete=models.SET_NULL)

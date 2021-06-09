@@ -1,5 +1,7 @@
 from django.contrib import admin
-from .models import Aluno, Professor, Conteudo, Turma, Veiculo, AulaPratica, AulaTeorica
+
+from .models import (Aluno, AulaPratica, AulaTeorica, Cidade, Conteudo,
+                     Endereco, Estado, Logradouro, Professor, Turma, Veiculo)
 
 
 @admin.register(Aluno)
@@ -35,3 +37,22 @@ class AulaPraticaAdmin(admin.ModelAdmin):
 @admin.register(AulaTeorica)
 class AulaTeoricaAdmin(admin.ModelAdmin):
     list_display = ('data', 'turma', 'professor')
+
+@admin.register(Estado)
+class EstadoAdmin(admin.ModelAdmin):
+    list_display = ('uf', 'nome')
+
+
+@admin.register(Cidade)
+class CidadeAdmin(admin.ModelAdmin):
+    list_display = ('nome', 'estado')
+
+
+@admin.register(Logradouro)
+class LogradouroAdmin(admin.ModelAdmin):
+    list_display = ('nome', 'cidade')
+
+
+@admin.register(Endereco)
+class EnderecoAdmin(admin.ModelAdmin):
+    list_display = ('logradouro', 'complemento', 'numero')
