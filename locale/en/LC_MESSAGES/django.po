@@ -3,147 +3,151 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-11 11:53-0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2021-06-11 13:51-0300\n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.4.3\n"
 
 #: .\aplic\templates\contato.html:19
 msgid "Informação de contato"
-msgstr ""
+msgstr "Contact information"
 
 #: .\aplic\templates\contato.html:30
 msgid "Endereço"
-msgstr ""
+msgstr "Address"
 
 #: .\aplic\templates\contato.html:41
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: .\aplic\templates\contato.html:52
 msgid "Telefone"
-msgstr ""
+msgstr "Phone"
 
 #: .\aplic\templates\contato.html:63
 msgid "Horaio de trabalho"
-msgstr ""
+msgstr "Working time"
 
 #: .\aplic\templates\contato.html:64
 msgid "Segunda - Sexta"
-msgstr ""
+msgstr "Monday - Friday"
 
 #: .\aplic\templates\contato.html:75
 msgid "Deixe uma mensagem"
-msgstr ""
+msgstr "Leave a message!"
 
 #: .\aplic\templates\header.html:30
 msgid "Inicio"
-msgstr ""
+msgstr "Beginning"
 
 #: .\aplic\templates\header.html:31
 msgid "Serviços"
-msgstr ""
+msgstr "Services"
 
 #: .\aplic\templates\header.html:32
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2114
 msgid "Time"
-msgstr ""
+msgstr "Team"
 
 #: .\aplic\templates\header.html:33
 msgid "Relatorio"
-msgstr ""
+msgstr "Report"
 
 #: .\aplic\templates\header.html:34
 msgid "Contato"
-msgstr ""
+msgstr "Contact"
 
 #: .\aplic\templates\index.html:22
 msgid "Bem-Vindo a Auto Escola PTS"
-msgstr ""
+msgstr "Welcome to Auto School PTS"
 
 #: .\aplic\templates\index.html:23
 msgid "Nos te ajudamos a realizar seu sonho de dirigir"
-msgstr ""
+msgstr "We help you realize your dream of driving"
 
 #: .\aplic\templates\index.html:25 .\aplic\templates\index.html:35
 #: .\aplic\templates\index.html:77 .\aplic\templates\index.html:100
 #: .\aplic\templates\index.html:123 .\aplic\templates\index.html:146
 msgid "Leia mais"
-msgstr ""
+msgstr "Read more"
 
 #: .\aplic\templates\index.html:32
 msgid "Faça sua carteira de habilitação aqui"
-msgstr ""
+msgstr "Make your driver's license here"
 
 #: .\aplic\templates\index.html:33
 msgid "Temos diversas opções de tipo de carteira"
-msgstr ""
+msgstr "We have several options of portfolio type"
 
 #: .\aplic\templates\index.html:75
 msgid "Carteira que ira te permitir dirigir motos"
-msgstr ""
+msgstr "Wallet that will allow you to drive motorcycles"
 
 #: .\aplic\templates\index.html:98
 msgid "Carteira que ira te permitir dirigir carros"
-msgstr ""
+msgstr "Wallet that will allow you to drive cars"
 
 #: .\aplic\templates\index.html:121
 msgid "Carteira que ira te permitir dirigir caminhão"
-msgstr ""
+msgstr "Wallet that will allow you to drive truck"
 
 #: .\aplic\templates\index.html:144
 msgid "Temos diversos tipos de carteira de habilitação e pacotes sensacionais"
-msgstr ""
+msgstr "We have several types of driver's license and sensational packages"
 
 #: .\aplic\templates\index.html:184
 msgid "Alunos"
-msgstr ""
+msgstr "Students"
 
 #: .\aplic\templates\index.html:194
 msgid "Professores"
-msgstr ""
+msgstr "Teachers"
 
 #: .\aplic\templates\index.html:205
 msgid "Habilitados"
-msgstr ""
+msgstr "Enabled"
 
 #: .\aplic\templates\index.html:225
 msgid "..NOSSO TIME"
-msgstr ""
+msgstr ".. OUR TEAM"
 
 #: .\aplic\templates\index.html:294
 msgid "Nos ache no google maps"
-msgstr ""
+msgstr "Find us on google maps"
 
 #: .\aplic\templates\testimonial.html:15
 msgid ""
 "\"Acredito que seja uma ótima plataforma para quem deseja tirar sua "
 "habilitação, focamos bastante na satisfação do cliente.\""
 msgstr ""
+"\"I believe it's a great platform for those who want to get their license, "
+"we focus a lot on customer satisfaction.\""
 
 #: .\aplic\templates\testimonial.html:26
 msgid ""
 "\"A satisfação do cliente é nosso principal objetivo, por isso tentamos "
 "apresentar uma plataforma o mais simples possível.\""
 msgstr ""
+"\"Customer satisfaction is our main goal, so we try to present a platform "
+"as simple as possible.\""
 
 #: .\aplic\views.py:34
 msgid "E-mail enviado com sucesso"
-msgstr ""
+msgstr "E-mail successfully sent"
 
 #: .\aplic\views.py:38
 msgid "Falha ao enviar e-mail"
-msgstr ""
+msgstr "Failed to send email"
 
 #: .\venv\Lib\site-packages\bootstrap4\components.py:17
 #: .\venv\Lib\site-packages\bootstrap4\templates\bootstrap4\form_errors.html:3
